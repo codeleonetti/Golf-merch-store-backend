@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2021_07_14_225956) do
   end
 
   create_table "merchandises", force: :cascade do |t|
-    t.string "products"
-    t.string "categories"
+    t.string "product"
+    t.string "category"
     t.string "image"
     t.integer "Company_id", null: false
     t.datetime "created_at", precision: 6, null: false
