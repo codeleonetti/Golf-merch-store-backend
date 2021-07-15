@@ -4,6 +4,7 @@ class CreateMerchandises < ActiveRecord::Migration[6.1]
       t.string :product
       t.string :category
       t.string :image
+      t.string :price
       t.belongs_to :Company, null: false, foreign_key: true
 
       t.timestamps
