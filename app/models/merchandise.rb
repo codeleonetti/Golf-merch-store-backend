@@ -1,3 +1,3 @@
 class Merchandise < ApplicationRecord
-  belongs_to :Company
+  belongs_to :company
 end

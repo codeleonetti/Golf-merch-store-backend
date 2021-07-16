@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2021_07_14_225956) do
     t.string "category"
     t.string "image"
     t.string "price"
-    t.integer "Company_id", null: false
+    t.integer "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Company_id"], name: "index_merchandises_on_Company_id"
+    t.index ["company_id"], name: "index_merchandises_on_company_id"
   end
 
-  add_foreign_key "merchandises", "Companies"
+  add_foreign_key "merchandises", "companies"
 end
