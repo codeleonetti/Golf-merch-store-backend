@@ -3,13 +3,18 @@ class MerchandisesController < ApplicationController
 
   # GET /merchandises
   def index
-    @merchandises = Merchandise.all
-
+    if params[:company_id]
+      @company =Company.find(params[:company_id])
+      @merchandises = @company.merchandises
+    else
+      @merchandises = Merchandise.all
+    end
     render json: @merchandises
   end
 
   # GET /merchandises/1
   def show
+    set_merchandise
     render json: @merchandise
   end
 
@@ -46,6 +51,6 @@ class MerchandisesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def merchandise_params
-      params.require(:merchandise).permit(:products, :categories, :image, :Company_id)
+      params.require(:merchandise).permit(:products, :categories, :image, :company_id)
     end
 end
