@@ -51,6 +51,6 @@ class MerchandisesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def merchandise_params
-      params.require(:merchandise).permit(:products, :categories, :image, :company_id)
+      params.require(:merchandise).permit(:product, :category, :image, :price, :company_id)
     end
 end
